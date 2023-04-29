@@ -20,7 +20,7 @@ using Java.IO;
 
 namespace MQTT
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = false)]
     public class Dashboard : Activity
     {
    
