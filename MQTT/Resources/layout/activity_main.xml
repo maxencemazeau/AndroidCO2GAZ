@@ -18,15 +18,6 @@
         android:orientation="horizontal"
         android:gravity="end|center_vertical">
 
-        <ToggleButton
-            android:id="@+id/toggleButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="#7396F0"
-            android:textColor="#fff"
-            android:textStyle="bold"
-            android:textOn="ENG"
-            android:textOff="FR" />
 
         <Button
             android:id="@+id/optionButton"
@@ -35,7 +26,7 @@
             android:background="#7396F0"
             android:textColor="#fff"
             android:textStyle="bold"
-            android:text="Options" />
+            android:text="@string/setting" />
 
     </LinearLayout>
 

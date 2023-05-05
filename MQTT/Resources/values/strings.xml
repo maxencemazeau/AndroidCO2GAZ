@@ -7,4 +7,5 @@
     <string name="login_button">Login</string>
     <string name="english_button_label">ENG</string>
     <string name="french_button_label">FR</string>
+    <string name="setting">Settings</string>
 </resources>

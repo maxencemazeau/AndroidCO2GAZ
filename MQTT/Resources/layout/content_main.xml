@@ -27,7 +27,7 @@
         android:background="#7396F0"
         android:textColor="#fff"
         android:textStyle="bold"
-        android:text="Retour" />
+        android:text="@string/retour" />
 
         <ToggleButton
             android:id="@+id/toggleButton"
@@ -60,7 +60,7 @@
             android:layout_marginRight="16dp"
             android:padding="16dp"
             android:background="@drawable/textborder"
-            android:hint="Adresse ip du broker"/>
+            android:hint="@string/adresseIp"/>
 
           <EditText
             android:id="@+id/mdpbroker"
@@ -72,7 +72,7 @@
             android:layout_marginRight="16dp"
             android:padding="16dp"
             android:background="@drawable/textborder"
-            android:hint="Mot de passe"/>
+            android:hint="@string/motDePasse"/>
 
         <EditText
             android:id="@+id/topic"
@@ -84,7 +84,7 @@
             android:layout_marginRight="16dp"
             android:padding="16dp"
             android:background="@drawable/textborder"
-            android:hint="Nom du topic"/>
+            android:hint="@string/topic"/>
 
         <EditText
             android:id="@+id/moyen"
@@ -96,7 +96,7 @@
             android:layout_marginRight="16dp"
             android:padding="16dp"
             android:background="@drawable/textborder"
-            android:hint="Valeur moyenne"/>
+            android:hint="@string/moyenne"/>
 
         <EditText
             android:id="@+id/fort"
@@ -108,11 +108,11 @@
             android:layout_marginRight="16dp"
             android:padding="16dp"
             android:background="@drawable/textborder"
-            android:hint="Valeur haute"/>
+            android:hint="@string/haute"/>
 
         <Button
             android:id="@+id/buttonDuTopic"
-            android:text="S'abonner"
+            android:text="@string/abonner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"

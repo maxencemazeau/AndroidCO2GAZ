@@ -61,6 +61,8 @@ namespace MQTT
 
         private MQTTService mqttService;
 
+        private string currentLanguage;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -82,7 +84,7 @@ namespace MQTT
 
             retour = FindViewById<Button>(Resource.Id.retour);
 
-
+            currentLanguage = Intent.GetStringExtra("CurrentLanguage");
 
             // Creer le client MQTT
             mqttClient = new MqttFactory().CreateMqttClient();

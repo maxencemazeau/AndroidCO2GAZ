@@ -52,6 +52,7 @@ namespace MQTT
         private View greenView;
 
         private System.Timers.Timer updateTimer;
+        private string currentLanguage;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -66,7 +67,8 @@ namespace MQTT
             orangeView = FindViewById<View>(Resource.Id.orangeView);
             greenView = FindViewById<View>(Resource.Id.greenView);
 
-            
+            currentLanguage = Intent.GetStringExtra("CurrentLanguage");
+
             optionButton.Click += OnOptionButtonClick;
 
             updateTimer = new System.Timers.Timer();
@@ -82,6 +84,7 @@ namespace MQTT
         {
           
             Intent intent = new Intent(this, typeof(Options));
+            intent.PutExtra("CurrentLanguage", currentLanguage);
             StartActivity(intent);
         }
 

@@ -17361,7 +17361,7 @@ namespace MQTT
 			public const int labeled = 2131230958;
 			
 			// aapt resource value: 0x7F0800EF
-			public const int languageSwitch = 2131230959;
+			public const int languageButton = 2131230959;
 			
 			// aapt resource value: 0x7F0800F0
 			public const int layout = 2131230960;
@@ -19261,19 +19261,22 @@ namespace MQTT
 			public const int search_menu_title = 2131689592;
 			
 			// aapt resource value: 0x7F0F0079
-			public const int status_bar_notification_info_overflow = 2131689593;
+			public const int setting = 2131689593;
 			
 			// aapt resource value: 0x7F0F007A
-			public const int summary_collapsed_preference_list = 2131689594;
+			public const int status_bar_notification_info_overflow = 2131689594;
 			
 			// aapt resource value: 0x7F0F007B
-			public const int username_hint = 2131689595;
+			public const int summary_collapsed_preference_list = 2131689595;
 			
 			// aapt resource value: 0x7F0F007C
-			public const int v7_preference_off = 2131689596;
+			public const int username_hint = 2131689596;
 			
 			// aapt resource value: 0x7F0F007D
-			public const int v7_preference_on = 2131689597;
+			public const int v7_preference_off = 2131689597;
+			
+			// aapt resource value: 0x7F0F007E
+			public const int v7_preference_on = 2131689598;
 			
 			static String()
 			{

@@ -7,4 +7,13 @@
     <string name="login_button">Se connecter</string>
     <string name="english_button_label">ENG</string>
     <string name="french_button_label">FR</string>
+    <string name="setting">Options</string>
+
+    <string name="retour">Retour</string>
+    <string name="adresseIp">Adresse ip du broker</string>
+    <string name="motDePasse">Mot de passe</string>
+    <string name="topic">Nom du topic</string>
+    <string name="haute">Valeur haute</string>
+    <string name="moyenne">Valeur moyenne</string>
+    <string name="abonner">S'abonner</string>
 </resources>

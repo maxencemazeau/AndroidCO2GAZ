@@ -18,16 +18,14 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
 
-            <Switch
-                android:id="@+id/languageSwitch"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="#7396F0"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                android:textOn="@string/english_button_label"
-                android:textOff="@string/french_button_label"
-                android:checked="true"/>
+            <Button
+    android:id="@+id/languageButton"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#7396F0"
+    android:textColor="#fff"
+    android:textStyle="bold"
+    android:text="@string/english_button_label"/>
 
         </LinearLayout>
 
