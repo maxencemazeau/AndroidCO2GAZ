@@ -47,6 +47,8 @@ namespace MQTT
 
         private Button subscribeButton;
 
+        private Button languageButton;
+
         private Button topicButton;
         private TextView moyenEditText;
         private TextView fortEditText;
@@ -84,13 +86,23 @@ namespace MQTT
 
             retour = FindViewById<Button>(Resource.Id.retour);
 
+            languageButton = FindViewById<Button>(Resource.Id.languageButton);
+
             currentLanguage = Intent.GetStringExtra("CurrentLanguage");
+
+            if( currentLanguage == "en")
+            {
+                languageButton.Text = GetString(Resource.String.english_button_label);
+            } else
+            {
+                languageButton.Text = GetString(Resource.String.french_button_label);
+            }
 
             // Creer le client MQTT
             mqttClient = new MqttFactory().CreateMqttClient();
 
             topicButton.Click += OnTopicButtonClick;
-
+            languageButton.Click += OnLanguageButtonClick;
 
             retour.Click += OnRetourButtonClick;
 
@@ -99,10 +111,51 @@ namespace MQTT
 
         }
 
+
+
+        private void ChangeLanguage(string lang)
+        {
+            var locale = new Java.Util.Locale(lang);
+            Java.Util.Locale.Default = locale;
+
+            var config = new Android.Content.Res.Configuration { Locale = locale };
+            BaseContext.Resources.UpdateConfiguration(config, BaseContext.Resources.DisplayMetrics);
+
+            // Update UI elements with new language strings
+            UpdateUI();
+        }
+
+        private void UpdateUI()
+        {
+            mdpTextView.Hint = GetString(Resource.String.motDePasse);
+
+            topicEditText.Hint = GetString(Resource.String.topic);
+
+            ipEditText.Hint = GetString(Resource.String.adresseIp);
+
+            moyenEditText.Hint = GetString(Resource.String.moyenne);
+
+            fortEditText.Hint = GetString(Resource.String.haute);
+
+            topicButton.Text = GetString(Resource.String.abonner);
+
+            retour.Text = GetString(Resource.String.retour);
+            languageButton.Text = GetString(Resource.String.english_button_label) == languageButton.Text ? GetString(Resource.String.french_button_label) : GetString(Resource.String.english_button_label);
+        }
+
+        private void OnLanguageButtonClick(object sender, EventArgs e)
+        {
+            string currentLanguage = languageButton.Text == GetString(Resource.String.english_button_label) ? "en" : "fr";
+            string newLanguage = currentLanguage == "en" ? "fr" : "en";
+            ChangeLanguage(newLanguage);
+            this.currentLanguage = newLanguage;
+        }
+
         private void OnRetourButtonClick(object sender, EventArgs e)
         {
   
             Intent intent = new Intent(this, typeof(Dashboard));
+            intent.PutExtra("CurrentLanguage", currentLanguage);
             StartActivity(intent);
         }
 
