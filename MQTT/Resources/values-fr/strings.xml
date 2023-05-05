@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<resources>
+    <string name="login_title">Connexion</string>
+    <string name="username_hint">Nom d\'utilisateur</string>
+    <string name="password_hint">Mot de passe</string>
+    <string name="login_button">Se connecter</string>
+    <string name="english_button_label">ENG</string>
+    <string name="french_button_label">FR</string>
+</resources>

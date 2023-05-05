@@ -29,6 +29,8 @@ namespace MQTT
     {
         private EditText usernameEditText, passwordEditText;
         private Button loginButton;
+        private Switch languageSwitch;
+        private TextView loginTitleTextView;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -39,9 +41,12 @@ namespace MQTT
             usernameEditText = FindViewById<EditText>(Resource.Id.usernameEditText);
             passwordEditText = FindViewById<EditText>(Resource.Id.passwordEditText);
             loginButton = FindViewById<Button>(Resource.Id.loginButton);
+            languageSwitch = FindViewById<Switch>(Resource.Id.languageSwitch);
+            loginTitleTextView = FindViewById<TextView>(Resource.Id.loginTitleTextView);
 
-            
+
             loginButton.Click += OnLoginButtonClick;
+            languageSwitch.CheckedChange += OnLanguageSwitchCheckedChange;
         }
 
         private async void OnLoginButtonClick(object sender, EventArgs e)
@@ -62,6 +67,34 @@ namespace MQTT
             {
                 Toast.MakeText(this, ex.Message, ToastLength.Short).Show();
             }
+        }
+
+        private void OnLanguageSwitchCheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
+        {
+            var lang = e.IsChecked ? "en" : "fr";
+            ChangeLanguage(lang);
+        }
+
+        private void ChangeLanguage(string lang)
+        {
+            var locale = new Java.Util.Locale(lang);
+            Java.Util.Locale.Default = locale;
+
+            var config = new Android.Content.Res.Configuration { Locale = locale };
+            BaseContext.Resources.UpdateConfiguration(config, BaseContext.Resources.DisplayMetrics);
+
+            // Update UI elements with new language strings
+            UpdateUI();
+        }
+
+        private void UpdateUI()
+        {
+            loginTitleTextView.Text = GetString(Resource.String.login_title);
+            usernameEditText.Hint = GetString(Resource.String.username_hint);
+            passwordEditText.Hint = GetString(Resource.String.password_hint);
+            loginButton.Text = GetString(Resource.String.login_button);
+            languageSwitch.TextOn = GetString(Resource.String.english_button_label);
+            languageSwitch.TextOff = GetString(Resource.String.french_button_label);
         }
     }
 }
