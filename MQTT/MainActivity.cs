@@ -64,11 +64,11 @@ namespace MQTT
             var locale = new Java.Util.Locale(lang);
             Java.Util.Locale.Default = locale;
 
-            // Crée une nouvelle configuration en définissant la locale avec la nouvelle langue
+            // Crée une nouvelle configuration en définissant la langue locale avec la nouvelle langue
             var config = new Android.Content.Res.Configuration { Locale = locale };
             BaseContext.Resources.UpdateConfiguration(config, BaseContext.Resources.DisplayMetrics);
 
-            // Update UI elements with new language strings
+            // Update l'ui avec la nouvelle langue
             UpdateUI();
         }
 

@@ -117,10 +117,6 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\values-eng\strings.xml">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
     <AndroidResource Include="Resources\values-fr\strings.xml">
       <SubType></SubType>
       <Generator></Generator>
@@ -128,7 +124,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
-    <Folder Include="Resources\values-eng\" />
     <Folder Include="Resources\values-fr\" />
   </ItemGroup>
   <ItemGroup>

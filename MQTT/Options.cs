@@ -11,6 +11,7 @@
            1.1        24/02/23  Maxence     Première version
            1.2        23/04/23  Maxence     Deuxième version
            1.3        30/04/23  Maxence     Troisième version
+           2          05/05/2023 Maxence    Traduction + Re changer la langue
    
  * */
 
