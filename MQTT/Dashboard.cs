@@ -67,6 +67,7 @@ namespace MQTT
             orangeView = FindViewById<View>(Resource.Id.orangeView);
             greenView = FindViewById<View>(Resource.Id.greenView);
 
+            //Récupère la langue
             currentLanguage = Intent.GetStringExtra("CurrentLanguage");
 
             optionButton.Click += OnOptionButtonClick;

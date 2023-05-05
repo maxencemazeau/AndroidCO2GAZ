@@ -88,8 +88,10 @@ namespace MQTT
 
             languageButton = FindViewById<Button>(Resource.Id.languageButton);
 
+            //Récupère la langue
             currentLanguage = Intent.GetStringExtra("CurrentLanguage");
 
+            //Voit qu'elle texte afficher sur le bouton en fonction de la langue
             if( currentLanguage == "en")
             {
                 languageButton.Text = GetString(Resource.String.english_button_label);
@@ -112,21 +114,23 @@ namespace MQTT
         }
 
 
-
         private void ChangeLanguage(string lang)
         {
+            // Crée un nouvel objet Java.Util.Locale avec la langue souhaitée (lang)
             var locale = new Java.Util.Locale(lang);
             Java.Util.Locale.Default = locale;
 
+            // Crée une nouvelle configuration en définissant la locale avec la nouvelle langue
             var config = new Android.Content.Res.Configuration { Locale = locale };
             BaseContext.Resources.UpdateConfiguration(config, BaseContext.Resources.DisplayMetrics);
 
-            // Update UI elements with new language strings
+            
             UpdateUI();
         }
 
         private void UpdateUI()
         {
+            //Nom des éléments UI avec les valeurs strings.XML
             mdpTextView.Hint = GetString(Resource.String.motDePasse);
 
             topicEditText.Hint = GetString(Resource.String.topic);
@@ -140,11 +144,14 @@ namespace MQTT
             topicButton.Text = GetString(Resource.String.abonner);
 
             retour.Text = GetString(Resource.String.retour);
+
+            //Change le texte du bouton
             languageButton.Text = GetString(Resource.String.english_button_label) == languageButton.Text ? GetString(Resource.String.french_button_label) : GetString(Resource.String.english_button_label);
         }
 
         private void OnLanguageButtonClick(object sender, EventArgs e)
         {
+            //Permet de comparer la langue actuel pour changer adéquatement 
             string currentLanguage = languageButton.Text == GetString(Resource.String.english_button_label) ? "en" : "fr";
             string newLanguage = currentLanguage == "en" ? "fr" : "en";
             ChangeLanguage(newLanguage);
@@ -153,7 +160,7 @@ namespace MQTT
 
         private void OnRetourButtonClick(object sender, EventArgs e)
         {
-  
+            //Redirect et envoie la valeur de la langue
             Intent intent = new Intent(this, typeof(Dashboard));
             intent.PutExtra("CurrentLanguage", currentLanguage);
             StartActivity(intent);

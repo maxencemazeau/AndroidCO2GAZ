@@ -51,6 +51,7 @@ namespace MQTT
 
         private void OnLanguageButtonClick(object sender, EventArgs e)
         {
+            //Permet de comparer la langue actuel pour changer adéquatement 
             string currentLanguage = languageButton.Text == GetString(Resource.String.english_button_label) ? "en" : "fr";
             string newLanguage = currentLanguage == "en" ? "fr" : "en";
             ChangeLanguage(newLanguage);
@@ -58,9 +59,11 @@ namespace MQTT
 
         private void ChangeLanguage(string lang)
         {
+            // Crée un nouvel objet Java.Util.Locale avec la langue souhaitée (lang)
             var locale = new Java.Util.Locale(lang);
             Java.Util.Locale.Default = locale;
 
+            // Crée une nouvelle configuration en définissant la locale avec la nouvelle langue
             var config = new Android.Content.Res.Configuration { Locale = locale };
             BaseContext.Resources.UpdateConfiguration(config, BaseContext.Resources.DisplayMetrics);
 
@@ -70,6 +73,7 @@ namespace MQTT
 
         private void UpdateUI()
         {
+            //Nom des éléments UI avec les valeurs strings.XML
             loginTitleTextView.Text = GetString(Resource.String.login_title);
             usernameEditText.Hint = GetString(Resource.String.username_hint);
             passwordEditText.Hint = GetString(Resource.String.password_hint);
@@ -89,7 +93,7 @@ namespace MQTT
                 string currentLanguage = languageButton.Text == GetString(Resource.String.english_button_label) ? "en" : "fr";
 
 
-                //Redirige au dashboard
+                //Redirige au dashboard et envoie la langue
                 Intent intent = new Intent(this, typeof(Dashboard));
                 intent.PutExtra("CurrentLanguage", currentLanguage);
                 StartActivity(intent);
