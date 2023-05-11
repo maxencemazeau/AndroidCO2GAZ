@@ -28,7 +28,7 @@ namespace MQTT
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : Activity
     {
-        private EditText usernameEditText, passwordEditText;
+        private TextView usernameEditText, passwordEditText;
         private Button loginButton, languageButton;
         private Switch languageSwitch;
         private TextView loginTitleTextView;

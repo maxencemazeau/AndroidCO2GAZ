@@ -163,31 +163,35 @@ namespace MQTT
                 }
             });
 
-            //Paramètre de la connexion au broker
-            var options = new MqttClientOptionsBuilder()
+
+            if (messageTopic != null && moyen != null && fort != null)
+            {
+                //Paramètre de la connexion au broker
+                var options = new MqttClientOptionsBuilder()
                 .WithTcpServer("172.16.5.100")
                 .WithCredentials("mams", "mams")
                 .Build();
 
-            // Create MQTT client instance
-            var factory = new MqttFactory();
-            var mqttClient = factory.CreateMqttClient();
+                // Create MQTT client instance
+                var factory = new MqttFactory();
+                var mqttClient = factory.CreateMqttClient();
 
-            // Connecte au broker
-            await mqttClient.ConnectAsync(options);
+                // Connecte au broker
+                await mqttClient.ConnectAsync(options);
 
-            //Publie le message en fonction du niveau
-            var message = new MqttApplicationMessageBuilder()
-                .WithTopic("niveauCO2")
-                .WithPayload(messageContent)
-                .WithExactlyOnceQoS()
-                .WithRetainFlag()
-                .Build();
+                //Publie le message en fonction du niveau
+                var message = new MqttApplicationMessageBuilder()
+                    .WithTopic("niveauCO2")
+                    .WithPayload(messageContent)
+                    .WithExactlyOnceQoS()
+                    .WithRetainFlag()
+                    .Build();
 
-            await mqttClient.PublishAsync(message);
+                await mqttClient.PublishAsync(message);
 
-            
-            await mqttClient.DisconnectAsync();
+
+                await mqttClient.DisconnectAsync();
+            }
         }
 
     }
