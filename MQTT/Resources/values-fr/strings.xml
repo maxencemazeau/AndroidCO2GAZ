@@ -9,7 +9,10 @@
     <string name="french_button_label">FR</string>
     <string name="setting">Options</string>
 
+    <string name="qualite">Qualité de l\'air</string>
+
     <string name="retour">Retour</string>
+    <string name="titreOptions">Options du broker</string>
     <string name="adresseIp">Adresse ip du broker</string>
     <string name="motDePasse">Mot de passe</string>
     <string name="topic">Nom du topic</string>

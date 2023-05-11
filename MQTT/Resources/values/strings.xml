@@ -8,6 +8,9 @@
     <string name="english_button_label">ENG</string>
     <string name="french_button_label">FR</string>
     <string name="setting">Settings</string>
+        
+    <string name="titreOptions">Settings of the broker</string>
+    <string name="qualite">Air quality</string>
 
     <string name="retour">Go back</string>
     <string name="adresseIp">Broker ip adress</string>

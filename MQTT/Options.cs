@@ -53,6 +53,7 @@ namespace MQTT
         private Button topicButton;
         private TextView moyenEditText;
         private TextView fortEditText;
+        private TextView titreOptions;
 
         private TextView mdpTextView;
 
@@ -76,7 +77,7 @@ namespace MQTT
             //Elements XAML
             topicButton = FindViewById<Button>(Resource.Id.buttonDuTopic);
             mdpTextView = FindViewById<TextView>(Resource.Id.mdpbroker);
-
+            titreOptions = FindViewById<TextView>(Resource.Id.titre);
             topicEditText = FindViewById<EditText>(Resource.Id.topic);
 
             ipEditText = FindViewById<TextView>(Resource.Id.ipbroker);
@@ -135,6 +136,7 @@ namespace MQTT
             mdpTextView.Hint = GetString(Resource.String.motDePasse);
 
             topicEditText.Hint = GetString(Resource.String.topic);
+            titreOptions.Text = GetString(Resource.String.titreOptions);
 
             ipEditText.Hint = GetString(Resource.String.adresseIp);
 

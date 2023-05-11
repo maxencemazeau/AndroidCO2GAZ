@@ -51,6 +51,7 @@ namespace MQTT
         private View redView;
         private View orangeView;
         private View greenView;
+        private TextView qualiteAir;
 
         private System.Timers.Timer updateTimer;
         private string currentLanguage;
@@ -68,6 +69,9 @@ namespace MQTT
             orangeView = FindViewById<View>(Resource.Id.orangeView);
             greenView = FindViewById<View>(Resource.Id.greenView);
 
+            qualiteAir = FindViewById<TextView>(Resource.Id.qualiteAir);
+            
+
             //Récupère la langue
             currentLanguage = Intent.GetStringExtra("CurrentLanguage");
 
@@ -79,6 +83,8 @@ namespace MQTT
             updateTimer.Elapsed += OnUpdateTimerElapsed;
 
             updateTimer.Start();
+
+            qualiteAir.Text = GetString(Resource.String.qualite);
 
         }
 

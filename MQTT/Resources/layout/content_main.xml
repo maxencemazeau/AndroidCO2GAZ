@@ -49,6 +49,16 @@
         android:orientation="vertical"
         android:layout_marginTop="100dp">
 
+         <TextView
+        android:id="@+id/titre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titreOptions"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center_horizontal" />
+
         <EditText
             android:id="@+id/ipbroker"
             android:layout_width="match_parent"

@@ -89,15 +89,18 @@ namespace MQTT
 
             try
             {
-                var api = new ApiCall();
-                var user = await api.LoginAsync(username, password);
-                string currentLanguage = languageButton.Text == GetString(Resource.String.english_button_label) ? "en" : "fr";
+                //var api = new ApiCall();
+                //var user = await api.LoginAsync(username, password);
+                if (username == "login1" && password == "pass1")
+                {
+                    string currentLanguage = languageButton.Text == GetString(Resource.String.english_button_label) ? "en" : "fr";
 
 
-                //Redirige au dashboard et envoie la langue
-                Intent intent = new Intent(this, typeof(Dashboard));
-                intent.PutExtra("CurrentLanguage", currentLanguage);
-                StartActivity(intent);
+                    //Redirige au dashboard et envoie la langue
+                    Intent intent = new Intent(this, typeof(Dashboard));
+                    intent.PutExtra("CurrentLanguage", currentLanguage);
+                    StartActivity(intent);
+                }
             }
             catch (Exception ex)
             {
